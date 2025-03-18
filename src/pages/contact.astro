@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ProfileImage from "../assets/images/profile.png";
+import ProfileImage from "../assets/images/profile.jpg";
 import Image from "astro/components/Image.astro";
 import AnansiWeb from "../assets/anansi_web_white.svg";
 ---
@@ -14,7 +14,7 @@ import AnansiWeb from "../assets/anansi_web_white.svg";
       <div class="profile-section">
         <Image
           src={ProfileImage}
-          alt="Profile Picture"
+          alt="Profile"
           class="profile-image"
           width={250}
           height={250}
@@ -103,6 +103,8 @@ import AnansiWeb from "../assets/anansi_web_white.svg";
     border-radius: 50%;
     border: 3px solid #333;
     object-fit: cover;
+    aspect-ratio: 1/1;
+    object-position: bottom;
     transition:
       transform 0.3s ease,
       border-color 0.3s ease;
