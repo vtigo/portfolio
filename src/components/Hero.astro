@@ -22,17 +22,6 @@ const {
     <Image src={AnansiWeb} alt="anansi_web" loading="eager"  />
   </div>
   <div class="description-container">
-    <!-- <div class="profile-wrapper">
-      <Image
-        class="profile_picture"
-        src={profileImage}
-        alt="profile"
-        width={150}
-        height={150}
-        loading="eager"
-        fetchpriority="high"
-      />
-    </div> -->
     <h2 class="text-sm text-zinc-500 animate-fade-in uppercase syne">
       {title}
     </h2>
@@ -79,12 +68,7 @@ const {
 </script>
 
 <style>
-  .profile-wrapper,
-  h1,
-  p,
-  .button-wrapper {
-    min-height: 1rem;
-  }
+ 
 
   #hero {
     display: flex;
@@ -137,47 +121,6 @@ const {
     }
   }
 
-  .profile-wrapper {
-    animation: slideInFromTop 1s ease-out forwards;
-    position: relative;
-  }
-
-  .profile-wrapper::after {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 50%;
-    background: linear-gradient(
-      45deg,
-      rgba(255, 255, 255, 0.8) 0%,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0.8) 100%
-    );
-    z-index: -1;
-    filter: blur(8px);
-    opacity: 0.6;
-    animation: glowRotate 5s linear infinite;
-  }
-
-  .profile_picture {
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transition:
-      transform 0.3s ease,
-      box-shadow 0.3s ease;
-    position: relative;
-    z-index: 2;
-  }
-
-  .profile_picture:hover {
-    border-color: #fff;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-  }
-
   h1,
   p {
     color: white;
@@ -195,35 +138,5 @@ const {
   .button-wrapper.show {
     animation: fadeIn 0.8s ease-out forwards;
   }
-
-  /* Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes slideInFromTop {
-    0% {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @keyframes glowRotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+ 
 </style>

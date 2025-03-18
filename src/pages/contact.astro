@@ -1,9 +1,199 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProfileImage from "../assets/images/profile.png";
+import Image from "astro/components/Image.astro";
+import AnansiWeb from "../assets/anansi_web_white.svg";
 ---
 
 <Layout>
-  <section class="min-h-screen bg-black">
-    <p class="text-white">oi</p>
+  <section id="contact">
+    <div class="fixed right-0 opacity-10">
+      <Image src={AnansiWeb} alt="anansi_web" loading="eager" />
+    </div>
+    <div class="contact-container z-10">
+      <div class="profile-section">
+        <Image
+          src={ProfileImage}
+          alt="Profile Picture"
+          class="profile-image"
+          width={250}
+          height={250}
+        />
+      </div>
+
+      <div class="info-section">
+        <h1 class="syne">vamos nos conectar</h1>
+        <p class="subtitle">
+          Fique a vontade para entrar em contato, estou aberto a novas
+          oportunidades e colaborações.
+        </p>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:ferrertiago.io@gmail.com"
+                >ferrertiago.io@gmail.com</a
+              >
+            </p>
+          </div>
+
+          <div class="contact-item">
+            <h3>Local</h3>
+            <p>São Paulo, Brazil</p>
+          </div>
+
+          <div class="contact-item">
+            <h3>Social</h3>
+            <div class="social-links">
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer">GitHub</a
+              >
+              <a
+                href="https://linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer">LinkedIn</a
+              >
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <h3>Disponibilidade</h3>
+            <p>
+              Atualmente disponível para atuar remotamente no mundo todo ou presencialmente em
+              São Paulo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </Layout>
+
+<style>
+  #contact {
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .contact-container {
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .profile-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-image {
+    border-radius: 50%;
+    border: 3px solid #333;
+    object-fit: cover;
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .info-section {
+    flex: 1.5;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #ffffff, #a0a0a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .contact-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #f0f0f0;
+  }
+
+  .contact-item p {
+    color: #ccc;
+  }
+
+  .contact-item a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .contact-item a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-links a {
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .social-links a:hover {
+    background-color: #555;
+    text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .profile-section,
+    .info-section {
+      flex: 1;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+    }
+    #contact {
+      padding-bottom: 5rem;
+    }
+  }
+</style>

@@ -1,12 +1,18 @@
 ---
-import Logo from "./Logo.astro";
+import Image from "astro/components/Image.astro";
+import AnansiWebWhite from "../assets/anansi_web_white.svg";
 ---
 
-<header id="header" class="animate-fade-in">
-  <div class="flex items-center gap-2">
-    <Logo />
+<header id="header">
+  <a href="/" class="flex items-center gap-2">
+    <Image
+      src={AnansiWebWhite}
+      class="max-w-12"
+      alt="Anansi Logo"
+      loading="eager"
+    />
     <h1 class="syne">TIAGOFERRER</h1>
-  </div>
+  </a>
 
   <nav>
     <a href="/contact">contato</a>

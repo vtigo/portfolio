@@ -1,0 +1,167 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer id="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p class="label">Email</p>
+      <p class="email mb-2">
+        <a href="mailto:ferrertiago.io@gmail.com">ferrertiago.io@gmail.com</a>
+      </p>
+      <p class="label">Telefone / Whatsapp</p>
+      <p class="email">
+        <p>+55 11 9 4044-6032</p>
+      </p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Links</h3>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <!-- <li><a href="/about">About</a></li>
+        <li><a href="/projects">Projects</a></li> -->
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section z-10">
+      <h3>Social</h3>
+      <div class="social-links">
+        <a
+          href="https://github.com/vtigo"
+          aria-label="GitHub"
+          target="_blank"
+          rel="noopener noreferrer">GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/tiago-rossi-ferrer-32b29a183/"
+          aria-label="LinkedIn"
+          target="_blank"
+          rel="noopener noreferrer">LinkedIn</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {currentYear} Tiago Ferrer. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  #footer {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    padding: 32px;
+    position: relative;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 24px;
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .footer-section h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 2px;
+    background-color: #f0f0f0;
+  }
+
+  .label {
+    color: #999;
+    margin-bottom: 4px;
+  }
+
+  .email a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .email a:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li {
+    margin-bottom: 8px;
+  }
+
+  ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  ul li a:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 16px;
+  }
+
+  .social-links a {
+    color: white;
+    opacity: 70%;
+    text-decoration: none;
+    transition: color 0.1s ease;
+  }
+
+  .social-links a:hover {
+    opacity: 100%;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 16px;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #999;
+  }
+
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .footer-section {
+      min-width: 100%;
+    }
+
+    #footer {
+      padding-bottom: 80px;
+    }
+  }
+</style>
