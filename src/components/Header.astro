@@ -1,0 +1,43 @@
+<header id="header" class="animate-fade-in">
+  <h1>tiagorossi</h1>
+  <nav>
+    <a>contato</a>
+    <a class="hire-me">Me Contrate</a>
+  </nav>
+</header>
+
+<style>
+  nav {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  a {
+    cursor: pointer;
+  }
+  #header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 60px;
+    justify-content: space-between;
+    padding: 0 32px;
+    align-items: center;
+    mix-blend-mode: difference;
+    color: white;
+    z-index: 1000;
+  }
+
+  #header .hire-me {
+    background-color: #f50057;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  #header.animate-fade-in {
+    animation-delay: 0.5s;
+  }
+</style>

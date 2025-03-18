@@ -1,0 +1,300 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  ctaText?: string;
+  ctaLink?: string;
+}
+const {
+  title = "Olá! Eu sou o Tiago",
+  description = "Desenvolvedor Full Stack criativo que navega nos limites do conhecido, transformando desafios complexos em oportunidades de inovação.",
+  ctaText = "Conheça meu trabalho",
+  ctaLink = "/projects",
+} = Astro.props;
+---
+
+<section id="hero">
+  <div class="gradient-bg"></div>
+  <div class="description-container">
+    <!-- <div class="profile-wrapper">
+      <Image
+        class="profile_picture"
+        src={profileImage}
+        alt="profile"
+        width={150}
+        height={150}
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div> -->
+    <h2 class="text-sm text-white animate-fade-in uppercase">{title}</h2>
+    <div class="typewriter-container">
+      <h1 class="text-white text-5xl typewriter">
+        <span id="typewriter-text"></span>
+        <span class="cursor">|</span>
+      </h1>
+    </div>
+    <!-- <div class="animate-fade-in button-wrapper">
+      <Button text={ctaText} href={ctaLink} target="_blank" />
+    </div> -->
+  </div>
+</section>
+
+<script>
+  // Typewriter effect with JavaScript for better control
+  document.addEventListener("DOMContentLoaded", function () {
+    const text =
+      "Desenvolvedor Full Stack criativo que navega nos limites do conhecido, transformando desafios complexos em oportunidades para inovação.";
+    const element = document.getElementById("typewriter-text");
+    let i = 0;
+
+    // Clear any existing text
+    if (element) element.textContent = "";
+
+    // Start typing effect after a short delay
+    setTimeout(() => {
+      const typingEffect = setInterval(() => {
+        if (element && i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+        } else {
+          clearInterval(typingEffect);
+          // Show the button after typing completes
+          const buttonWrapper = document.querySelector(".button-wrapper");
+          if (buttonWrapper) {
+            buttonWrapper.classList.add("show");
+          }
+        }
+      }, 15); // Speed of typing
+    }, 800); // Delay before typing starts
+  });
+</script>
+
+<style>
+  .profile-wrapper,
+  h1,
+  p,
+  .button-wrapper {
+    min-height: 1rem;
+  }
+
+  #hero {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    padding: 32px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gradient-bg {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        217deg,
+        rgba(90, 10, 47, 0.9),
+        rgba(7, 4, 15, 0.8) 70.71%
+      ),
+      linear-gradient(127deg, rgba(25, 3, 54, 0.9), rgba(10, 3, 20, 0.8) 70.71%),
+      linear-gradient(
+        336deg,
+        rgba(150, 20, 70, 0.9),
+        rgba(15, 8, 30, 0.8) 70.71%
+      );
+    z-index: -1;
+    transform-origin: center center;
+  }
+
+  .description-container {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+    z-index: 1;
+    position: relative;
+  }
+
+  .typewriter-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .typewriter {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+
+  /* Cursor blinking animation */
+  .cursor {
+    display: inline-block;
+    margin-left: 3px;
+    animation: blink 0.7s infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .profile-wrapper {
+    animation: slideInFromTop 1s ease-out forwards;
+    position: relative;
+  }
+
+  .profile-wrapper::after {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.8) 100%
+    );
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.6;
+    animation: glowRotate 5s linear infinite;
+  }
+
+  .profile_picture {
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    position: relative;
+    z-index: 2;
+  }
+
+  .profile_picture:hover {
+    border-color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  h1,
+  p {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  h2.animate-fade-in {
+    animation-delay: 0.3s;
+  }
+
+  .button-wrapper {
+    opacity: 0;
+  }
+
+  .button-wrapper.show {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInFromTop {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes gradientRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes glowRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Adding subtle animated particles in the background */
+  #hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+        circle at 20% 30%,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 5%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 5%
+      ),
+      radial-gradient(
+        circle at 40% 70%,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 5%
+      ),
+      radial-gradient(
+        circle at 60% 80%,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 5%
+      );
+    background-size: 150% 150%;
+    animation: shiftParticles 15s ease-in-out infinite alternate;
+    opacity: 0.6;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  @keyframes shiftParticles {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+</style>

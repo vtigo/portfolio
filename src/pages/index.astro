@@ -1,11 +1,38 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<Hero
+		title="tiago rossi ferrer"
+		description="Desenvolvedor Full Stack criativo que navega nos limites do conhecido, transformando desafios complexos em oportunidades de inovação."
+		ctaText="Ver Projetos"
+		ctaLink="#portfolio"
+	/>
+	<section id="hello">
+		<div>
+			<p class="text-2xl max-w-3xl text-center animate-fade-in">
+				Bem vindo, esse é meu site. Eu acredito que em tempos de incerteza surge
+				o potencial do inesperado, do que ainda não foi nomeado. E é nesse
+				espaço entre o conhecido e o inesperado que eu quero trabalhar com você
+				- transformando desafios em soluções inovadoras que não apenas respondem
+				ao presente, mas abrem caminhos para futuros que ainda estamos
+				aprendendo a vislumbrar.
+			</p>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	p {
+		line-height: 1.5;
+	}
+	#hello {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		background-color: white;
+	}
+</style>
