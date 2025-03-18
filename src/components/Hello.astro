@@ -1,0 +1,32 @@
+---
+import Image from "astro/components/Image.astro";
+import AnansiWeb from "../assets/anansi_web.svg";
+---
+
+<section id="hello">
+  <Image src={AnansiWeb} class="size-[300px]" alt="anansi_web" />
+  <p class="text-2xl max-w-5xl text-center animate-fade-in syne">
+    Bem vindo, esse é meu site. Eu acredito que em tempos de incerteza surge o
+    potencial do inesperado, do que ainda não foi nomeado. E é nesse espaço
+    entre o conhecido e o inesperado que eu quero trabalhar com você -
+    transformando desafios em soluções inovadoras que não apenas respondem ao
+    presente, mas abrem caminhos para futuros que ainda estamos aprendendo a
+    vislumbrar.
+  </p>
+</section>
+
+<style>
+  p {
+    line-height: 1.5;
+  }
+  #hello {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+    padding: 32px;
+    position: relative;
+  }
+</style>

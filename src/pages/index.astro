@@ -1,4 +1,5 @@
 ---
+import Hello from "../components/Hello.astro";
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -10,29 +11,5 @@ import Layout from "../layouts/Layout.astro";
 		ctaText="Ver Projetos"
 		ctaLink="#portfolio"
 	/>
-	<section id="hello">
-		<div>
-			<p class="text-2xl max-w-3xl text-center animate-fade-in">
-				Bem vindo, esse é meu site. Eu acredito que em tempos de incerteza surge
-				o potencial do inesperado, do que ainda não foi nomeado. E é nesse
-				espaço entre o conhecido e o inesperado que eu quero trabalhar com você
-				- transformando desafios em soluções inovadoras que não apenas respondem
-				ao presente, mas abrem caminhos para futuros que ainda estamos
-				aprendendo a vislumbrar.
-			</p>
-		</div>
-	</section>
+	<Hello />
 </Layout>
-
-<style>
-	p {
-		line-height: 1.5;
-	}
-	#hello {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100vh;
-		background-color: white;
-	}
-</style>
