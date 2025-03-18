@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import "./src/styles/global.css";
 import "./src/styles/animations.css";
 import "./src/styles/fonts.css";
+import MobileControls from "../components/MobileControls.astro";
 ---
 
 <!doctype html>
@@ -23,10 +24,10 @@ import "./src/styles/fonts.css";
 	</head>
 	<body>
 		<Header />
-		<main>
-			
+		<main class="md:mb-16">
 			<slot />
 		</main>
+		<MobileControls />
 	</body>
 </html>
 

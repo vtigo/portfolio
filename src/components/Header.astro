@@ -10,7 +10,7 @@ import Logo from "./Logo.astro";
 
   <nav>
     <a href="/contact">contato</a>
-    <a class="hire-me">Me Contrate</a>
+    <!-- <a class="hire-me">Me Contrate</a> -->
   </nav>
 </header>
 
@@ -35,6 +35,10 @@ import Logo from "./Logo.astro";
     mix-blend-mode: difference;
     color: white;
     z-index: 1000;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   #header .hire-me {
